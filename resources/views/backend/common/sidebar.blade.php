@@ -25,7 +25,7 @@
         <li class="nav-item">
             <a class="nav-link {{ $route->named('backend.users*') ? 'active' : '' }}" href="{{ route('backend.users.index') }}">
                 <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Categories</span></a>
+                <span>Users</span></a>
         </li>
     @endif
     <!-- Divider -->
