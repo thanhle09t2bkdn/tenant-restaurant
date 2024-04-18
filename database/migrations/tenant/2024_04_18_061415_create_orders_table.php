@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->uuid('user_id');
+            $table->uuid('table_id');
             $table->timestamps();
         });
     }
