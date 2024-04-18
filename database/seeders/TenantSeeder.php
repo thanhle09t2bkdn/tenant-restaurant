@@ -15,10 +15,14 @@ class TenantSeeder extends Seeder
      */
     public function run()
     {
-        Tenant::create([
-            'name' => 'free',
-            'description' => 'free',
-            'plan' => 'free',
+        $tenant = Tenant::create([
+            'name' => 'miquanbich',
+            'description' => 'miquanbich.tenant-restaurant.test',
+            'plan' => 1,
+        ]);
+
+        $tenant->domains()->create([
+            'domain' => 'miquanbich.tenant-restaurant.test',
         ]);
     }
 }
