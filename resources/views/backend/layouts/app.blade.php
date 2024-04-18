@@ -12,15 +12,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Novel Saw') }}</title>
+    <title>{{ config('app.name', 'Restaurant') }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{asset('backend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-    <!-- Select 2 -->
-    <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
     <!-- Custom styles for this template-->
     <link href="{{asset('backend/css/sb-admin-2.min.css')}}" rel="stylesheet">
     <link href="{{asset('backend/vendor/datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
@@ -33,7 +31,7 @@
 <div id="wrapper">
 
     <!-- Sidebar -->
-    @include('common.sidebar')
+    @include('backend.common.sidebar')
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -43,7 +41,7 @@
         <div id="content">
 
             <!-- Topbar -->
-            @include('common.header')
+            @include('backend.common.header')
             <!-- End of Topbar -->
 
             <!-- Begin Page Content -->
@@ -54,7 +52,7 @@
         <!-- End of Main Content -->
 
         <!-- Footer -->
-        @include('common.footer')
+        @include('backend.common.footer')
         <!-- End of Footer -->
 
     </div>
@@ -109,12 +107,8 @@
 <!-- Page level plugins -->
 <script src="{{asset('backend/vendor/chart.js/Chart.min.js')}}"></script>
 
-<!-- Select 2 -->
-<script src="{{ asset('plugins/select2/js/select2.full.min.js') }}"></script>
 
 <script src="{{asset('backend/vendor/datepicker/js/bootstrap-datepicker.min.js')}}"></script>
-<!-- Laravel File Manager -->
-<script src="{{ asset('/vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 @stack('after-scripts')
 <script src="{{asset('backend/js/common.js')}}"></script>
 

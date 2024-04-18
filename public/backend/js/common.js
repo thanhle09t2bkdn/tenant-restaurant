@@ -1,8 +1,5 @@
 $(document).ready(function () {
     $('.datepicker').datepicker();
-
-    $('.image-manager').filemanager('image');
-    $('.select2').select2();
 });
 
 

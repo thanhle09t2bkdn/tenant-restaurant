@@ -17,3 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 Auth::routes();
+Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'backend.', 'middleware' => ['auth', 'web', 'roles:' . \App\Models\User::ADMIN_ROLE]], function () {
+    require 'web/backend/users.php';
+});

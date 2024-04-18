@@ -23,19 +23,9 @@
             Admin
         </div>
         <li class="nav-item">
-            <a class="nav-link {{ $route->named('backend.categories*') ? 'active' : '' }}" href="{{ route('backend.categories.index') }}">
+            <a class="nav-link {{ $route->named('backend.users*') ? 'active' : '' }}" href="{{ route('backend.users.index') }}">
                 <i class="fas fa-fw fa-chart-bar"></i>
                 <span>Categories</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link {{ $route->named('backend.posts*') ? 'active' : '' }}" href="{{ route('backend.posts.index') }}">
-                <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Posts</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link {{ $route->named('backend.advertisements*') ? 'active' : '' }}" href="{{ route('backend.advertisements.index') }}">
-                <i class="fas fa-fw fa-chart-bar"></i>
-                <span>Advertisements</span></a>
         </li>
     @endif
     <!-- Divider -->
