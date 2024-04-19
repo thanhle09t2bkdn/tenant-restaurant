@@ -30,7 +30,6 @@ class TenantSeeder extends Seeder
             return Table::create([
                 'name' => 'name',
                 'description' => 'name',
-
             ]);
         });
     }
