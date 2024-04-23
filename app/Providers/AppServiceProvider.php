@@ -24,13 +24,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Sanctum::usePersonalAccessTokenModel(PersonalAccessToken::class);
-        /*if (env('APP_DEBUG')) {
+        if (env('APP_DEBUG')) {
             DB::listen(function ($query) {
                 File::append(
                     storage_path('/logs/query.log'),
                     $query->sql . ' [' . implode(', ', $query->bindings) . ']' . PHP_EOL
                 );
             });
-        }*/
+        }
     }
 }

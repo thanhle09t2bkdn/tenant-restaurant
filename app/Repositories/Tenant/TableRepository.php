@@ -4,7 +4,8 @@
 namespace App\Repositories\Tenant;
 
 
-use App\Models\User;
+use App\Models\Tenant\Table;
+use App\Repositories\BaseRepository;
 
 class TableRepository extends BaseRepository
 {
@@ -20,7 +21,7 @@ class TableRepository extends BaseRepository
     ];
 
 
-    public function __construct(User $model)
+    public function __construct(Table $model)
     {
         $this->model = $model;
     }

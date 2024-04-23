@@ -20,6 +20,9 @@ Route::group(['namespace' => 'Api\\V1', 'prefix' => 'v1', 'as' => 'api.v1', 'mid
         require 'api/v1/app/guest.php';
         Route::group(['middleware' => ['auth:sanctum', 'roles:' . \App\Models\User::USER_ROLE]], function () {
             require 'api/v1/app/account.php';
+            Route::group(['middleware' => ['tenant.header']], function () {
+                require 'api/v1/app/table.php';
+            });
         });
     });
 });

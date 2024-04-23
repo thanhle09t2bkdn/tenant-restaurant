@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 class Kernel extends HttpKernel
 {
@@ -65,5 +66,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'roles' => \App\Http\Middleware\CheckRole::class,
+        'tenant.header' => InitializeTenancyByRequestData::class,
     ];
 }
