@@ -14,7 +14,9 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, Uuids;
 
-    const ADMIN_ROLE = 1;
+    const SUPER_ADMIN_ROLE = 1;
+    const RESTAURANT_ADMIN_ROLE = 2;
+    const USER_ROLE = 3;
     /**
      * The attributes that are mass assignable.
      *
@@ -53,7 +55,9 @@ class User extends Authenticatable
      * @var string[]
      */
     public static $roleNames = [
-        self::ADMIN_ROLE => 'Admin',
+        self::SUPER_ADMIN_ROLE => 'Super Admin',
+        self::RESTAURANT_ADMIN_ROLE => 'Restaurant Admin',
+        self::USER_ROLE => 'User',
     ];
 
     /**
