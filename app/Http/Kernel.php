@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Stancl\Tenancy\Features\UniversalRoutes;
 use Stancl\Tenancy\Middleware\InitializeTenancyByRequestData;
 
 class Kernel extends HttpKernel
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'roles' => \App\Http\Middleware\CheckRole::class,
         'tenant.header' => InitializeTenancyByRequestData::class,
+//        'universal' => UniversalRoutes::class,
     ];
 }
