@@ -26,13 +26,12 @@ class GuestController extends ApiController
     public function login(LoginRequest $request)
     {
         $attributes = $request->only(array_keys($request->rules()));
-        if (!Auth::attempt(['email' => $attributes['email'], 'password' => $attributes['password']])) {
+        if (!Auth::attempt(['email' => $attributes['email'], 'password' => $attributes['password'], 'role' => User::USER_ROLE])) {
             return $this->errorResponse('Invalid login details', Response::HTTP_UNAUTHORIZED);
         }
         $user = $this->userRepository->where('email', $attributes['email'])->where('role', User::USER_ROLE)->first();
-        //dd($this->personalAccessTokenRepository->getByColumn($attributes['device_id'], 'device_id'));
         $lastToken = $this->personalAccessTokenRepository->getByColumn($attributes['device_id'], 'device_id');
-        if($lastToken) {
+        if ($lastToken) {
             $lastToken->delete();
         }
         $token = $user->createToken('auth_token', $attributes['device_type'], $attributes['device_id'], $attributes['device_token'])->plainTextToken;
