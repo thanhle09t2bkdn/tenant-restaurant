@@ -18,7 +18,7 @@ class TableController extends ApiController
 
     public function index(Request $request)
     {
-        dd($request->headers);
+//        dd($request->headers);
         $list = $this->tableRepository->searchFromRequest($request);
         return $this->successResponse($list);
     }
